@@ -9,16 +9,15 @@ if [ $# -eq 1 ] ;then
 	abs_code=$(stat -c "%a %n" $1 | awk '{split($1, str, ""); print str[1]}')
     declare -A perms=( [1]=exécution [2]=écriture [4]=lecture ) # Map permissions string as key and code as values
     final_perm="en"
-    for p in 4 2 1; do
+    for p in 4 2 1 ;do
         if [ $abs_code -ge $p ] ;then
             final_perm+=" ${perms[$p]}"
             abs_code=$((abs_code-p))
         fi
     done
 	# Print result
-	printf "$1 est un $type\n"
-	printf "$1 est accessible par $owner $final_perm"
+	printf "$1 est un $type\n$1 est accessible par $owner $final_perm\n"
 else
-	printf "Usage: $0 /path/to/file\nVeuillez passer un seul argument."
+	printf "Usage: $0 /path/to/file\nVeuillez passer un seul argument.\n"
 	exit 1
 fi

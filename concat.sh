@@ -1,9 +1,8 @@
 #!/bin/bash
 
 if [ "$#" -eq 2 ]; then
-    concat=$*
-    printf "%s" "$concat"
+    printf "$*\n"
 else
-    printf "Veuillez entrer deux paramètres."
+    printf "Veuillez passer deux paramètres.\n"
     exit 1
 fi
