@@ -1,0 +1,4 @@
+LANG=fr_FR.utf8
+LANGUAGE=fr_FR.utf8
+export LANG
+export LANGUAGE
