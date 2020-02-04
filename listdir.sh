@@ -3,7 +3,7 @@
 if [ $# -eq 1 ] ;then
     # List all files and dirs with full path
     list=$(ls -d $1*)
-    files="########## fichier dans $1\n"
+    files="########## fichiers dans $1\n"
     dirs="########## répertoires dans $1\n"
     for item in $list ;do
         if [ -f $item ] ;then

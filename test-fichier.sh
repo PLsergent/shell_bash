@@ -2,7 +2,7 @@
 source ./.bash_lang
 
 if [ $# -eq 1 ] ;then
-    # Get owner and argument type (file, directory, etc...)
+    # Get owner and type (file, directory, etc...)
 	owner=$(stat -c '%U' $1)
 	type=$(stat --printf "%F" $1)
     # Get permissions of the owner: stat give the absolute code "766" > awk to split and keep first number "7"
