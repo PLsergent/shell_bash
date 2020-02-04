@@ -1,7 +1,7 @@
 #!/bin/bash
 source ./.bash_lang
 
-if [ $# -eq 1 ] ;then
+if [ $# -eq 1 ]; then
     # Get owner and type (file, directory, etc...)
 	owner=$(stat -c '%U' $1)
 	type=$(stat --printf "%F" $1)
@@ -9,9 +9,12 @@ if [ $# -eq 1 ] ;then
 	abs_code=$(stat -c "%a %n" $1 | awk '{split($1, str, ""); print str[1]}')
     declare -A perms=( [1]=exécution [2]=écriture [4]=lecture ) # Map permissions string as key and code as values
     final_perm="en"
-    for p in 4 2 1 ;do
-        if [ $abs_code -ge $p ] ;then
+    for p in 4 2 1; do
+        # If the code > permission code
+        if [ $abs_code -ge $p ]; then
+            # It means the file got this permission, add it to the final string
             final_perm+=" ${perms[$p]}"
+            # The code is = code - permission code; so we can check the others permissions
             abs_code=$((abs_code-p))
         fi
     done

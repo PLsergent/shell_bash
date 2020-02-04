@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $(id -u) -eq 0 ] ;then
+if [ $(id -u) -eq 0 ]; then
 	read -p "Enter username : " username
 	read -s -p "Enter password : " password
     printf "\n"

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-if [ $# -eq 1 ] ;then
+if [ $# -eq 1 ]; then
     # List all files and dirs with full path
     list=$(ls -d $1*)
     files="########## fichiers dans $1\n"
     dirs="########## répertoires dans $1\n"
-    for item in $list ;do
-        if [ -f $item ] ;then
+    for item in $list; do
+        if [ -f $item ]; then
             files+="$item\n"
-        elif [ -d $item ] ;then
+        elif [ -d $item ]; then
             dirs+="$item\n"
         fi
     done

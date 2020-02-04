@@ -9,8 +9,8 @@ done
 
 declare -A grades=( [10]="insuffisant" [12]="moyen" [14]="assez bien" [16]="bien" [20]="très bien" )
 
-for g in 10 12 14 16 20 ;do
-    if [ $grade -le $g ] ;then
+for g in 10 12 14 16 20; do
+    if [ $grade -le $g ]; then
         printf "${grades[$g]}\n"
         break
     fi
