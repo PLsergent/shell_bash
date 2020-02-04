@@ -8,4 +8,4 @@ Some basics shell scripts.
 - Avancer d'une ligne : `d`
 - Avancer d'une page : `f`
 - Remonter d'une page : `b`
-- Chercher une chaîne de caractères : `/<expression régulière`, prochaine occurence : `n`
+- Chercher une chaîne de caractères : `/<expression régulière>`, prochaine occurence : `n`
